@@ -1,17 +1,16 @@
 public class rajaMantri extends Activity {
-    	
-	@Override
-	public void onbackpressed() {
+    	@Override
+	public void onBackPressed() {
+		//overriding onbackpressed method of class Activity	                              
 	}
-
 	@Override
-	protected void onpostresume() {
-		// TODO Auto-generated method stub
-		super.onpostresume();
+	protected void onPostResume() {
+		//overriding onpostresume() method of class Activity
+		super.onPostResume();
+		//calling onpostresume() method of super class Activity
 	}
-
 	@Override
-	public boolean onkeydown(int keyCode, KeyEvent event) {
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		dialog.setTitle("Exit game!");
 		dialog.setMessage("Are you sure you want to exit the game?");
@@ -30,7 +29,7 @@ public class rajaMantri extends Activity {
 	}
 
 	@Override
-	public void onlowmemory() {
+	public void onLowMemory() {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		dialog.setTitle("Low memory!");
 		dialog.setMessage("Too many apps open, kindly close some other apps and try again!");
@@ -45,7 +44,6 @@ public class rajaMantri extends Activity {
 
 	@Override
 	protected void onPause() {
-		// TODO Auto-generated method stub
 		super.onPause();
 	}
 
@@ -80,7 +78,7 @@ public class rajaMantri extends Activity {
 	static Button btnPod4;
 	Button btnShowResult;
 	Button btnRestart;
-	Button btnSignin;
+	Button btnSignIn;
 	Button btnGuess;
 	EditText editTxtPlayer1;
 	EditText editTxtPlayer2;
@@ -147,7 +145,6 @@ public class rajaMantri extends Activity {
         btnRajaMantri.setOnClickListener(new OnClickListener() {
         	
  		public void onClick(View v) {
- 			// TODO Auto-generated method stub
  		setContentView(R.layout.rmcsp);	
  		 // Create the adView
 	    AdView adView = new AdView(RajaMantri.this, AdSize.BANNER, "a14e156523d01de");
@@ -259,9 +256,9 @@ public class rajaMantri extends Activity {
 		 		});
 				}
 		     }
-		 	});
-			}
-		});
+		 });
+		}
+	});
     }
     public void makeGuess(){
     	
@@ -588,8 +585,7 @@ public class rajaMantri extends Activity {
 								
 								txtTurn.setText("Click on Guess!");
 								btnPlay.setClickable(true);
-								count = 0;
-								
+								count = 0;	
 							}
 						}
 					});
@@ -698,7 +694,6 @@ public class rajaMantri extends Activity {
 						}
 						txtTurn.setText("Click again to close the chit!");
 						btnPod2.setOnClickListener(new OnClickListener() {
-							
 							public void onClick(View v) {
 								// TODO Auto-generated method stub
 								btnPod2.setClickable(false);
@@ -710,7 +705,6 @@ public class rajaMantri extends Activity {
 								btnPod3.setClickable(true);
 								btnPod4.setClickable(true);
 								if(count == 4){
-									
 									txtTurn.setText("Click on Guess!");
 									btnPlay.setClickable(true);
 									count = 0;					
@@ -719,11 +713,9 @@ public class rajaMantri extends Activity {
 						});
 					}
 				});
-		        
 			btnPod3 = (Button)findViewById(R.id.btnPod3);
 			btnPod3.setBackgroundResource(R.drawable.podblclosed);
 			btnPod3.setOnClickListener(new OnClickListener() {
-					
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
 						player3 = solutionArray[2];
@@ -733,9 +725,7 @@ public class rajaMantri extends Activity {
 						btnPod1.setClickable(false);
 						btnPod4.setClickable(false);
 						if(txtTurn.getText().equals(player1_name + "'s" + " turn!")){
-							
 							if(player3.equals("MANTRI")){
-								
 								player1_role = "MANTRI";
 							}
 							if(player3.equals("RAJA")){
@@ -833,17 +823,14 @@ public class rajaMantri extends Activity {
 								btnPod1.setClickable(true);
 								btnPod4.setClickable(true);
 								if(count == 4){
-									
 									txtTurn.setText("Click on Guess!");
 									btnPlay.setClickable(true);
 									count = 0;
-									
 								}
 							}
 						});
 					}
 				});
-
 			btnPod4 = (Button)findViewById(R.id.btnPod4);
 			btnPod4.setBackgroundResource(R.drawable.podbrclosed);			
 			btnPod4.setOnClickListener(new OnClickListener() {
@@ -946,7 +933,6 @@ public class rajaMantri extends Activity {
 						btnPod4.setOnClickListener(new OnClickListener() {
 							
 							public void onClick(View v) {
-								// TODO Auto-generated method stub
 								btnPod4.setClickable(false);
 								count++;
 								btnPod4.setText("");
@@ -959,20 +945,16 @@ public class rajaMantri extends Activity {
 									
 									txtTurn.setText(nextTurn);
 									btnPlay.setClickable(true);
-									count = 0;
-									
+									count = 0;									
 								}
 							}
 						});
 					}
-				});    
-			
+				});
 			btnPod1.setText("");
 			btnPod2.setText("");
 			btnPod3.setText("");
 			btnPod4.setText("");
-    	
-    	
     }
     
     public void setRole(String role, String player){
@@ -993,30 +975,24 @@ public class rajaMantri extends Activity {
 			
 			player4_role = "CHOR";
 		}
-    	
     } 
     
-    void shuffleArray(String[] solutionArray)
-    {
+    void shuffleArray(String[] solutionArray){
     	Random rnd = new Random();
     	for (int i = solutionArray.length - 1; i >= 0; i--)
     		{
     			int index = rnd.nextInt(i + 1);
-  
     			String a = solutionArray[index];
     			solutionArray[index] = solutionArray[i];
     			solutionArray[i] = a;
     		}
 	}
-    
     static void updateScore(){
-    	
     	Log.v("AkhandBakar", "##########"+ guess);
     	if(player1_role.equals("MANTRI"))
     	{
     		Log.v("AkhandBakar", "##########Mantri"+ player1_name);
-    	if(guess)
-    		{
+    		if(guess){
     		i = i+80;
     		p1score=i;
     		txtTurn.setText(player1_name+" is right!");
@@ -1617,18 +1593,15 @@ public class rajaMantri extends Activity {
 			p3score=k;
 			
 			if(player1_role.equals("RAJA")){
-				
 				i = i+100;
 				j = j+50;
 				p1score=i;
     				p2score=j;
 			}else{
-				
 				i = i+50;
 				j = j+100;
 				p1score=i;
-    				p2score=j;
-				
+    				p2score=j;				
 			}		
 			}
     		}
