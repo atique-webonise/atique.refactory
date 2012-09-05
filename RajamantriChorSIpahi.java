@@ -125,20 +125,7 @@ public class rajamantri extends Activity {
     public void onRestart(){
     	
     	super.onRestart();
-    /*	player1_name = "" ;
-    	player2_name = "";
-    	player3_name = "";
-    	player4_name = "";
-    	guess = false;
-    	player1 = "";
-    	player2 = "";
-    	player3 = "";
-    	player4 = "";
-    	i=0;j=0;k=0;l=0;
-    	p1score = 0;
-    	p2score = 0;
-    	p3score = 0;
-    	p4score = 0;*/
+  
     	
     	
     }
@@ -146,22 +133,6 @@ public class rajamantri extends Activity {
     public void onResume(){
     	
     	super.onResume();
-    	/*player1_name = "" ;
-    	player2_name = "";
-    	player3_name = "";
-    	player4_name = "";
-    	guess = false;
-    	player1 = "";
-    	player2 = "";
-    	player3 = "";
-    	player4 = "";
-    	i=0;j=0;k=0;l=0;
-    	p1score = 0;
-    	p2score = 0;
-    	p3score = 0;
-    	p4score = 0;*/
-    	
-    	
     }
 
 
@@ -170,7 +141,6 @@ public class rajamantri extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome);
-      
         i = 0;
         j = 0;
         k = 0;
@@ -1275,7 +1245,9 @@ public class rajamantri extends Activity {
 			btnPod3.setText(player3);
 			btnPod4.setText(player4);
 			btnPod1.setBackgroundResource(R.drawable.podopen);
-			btnPod2.setBackgroundResource(R.drawable.podopen);
+			btnPod2.setBackgroundResource(R.drawable.podopen);git push -u origin master
+
+
 			btnPod3.setBackgroundResource(R.drawable.podopen);
 			btnPod4.setBackgroundResource(R.drawable.podopen);
     		if(player1_role.equals("CHOR"))
